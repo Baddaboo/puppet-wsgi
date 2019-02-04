@@ -1,0 +1,18 @@
+{
+  "name": "puppet-wsgi",
+  "version": "0.0.1",
+  "description": "Team Ascenders Puppet Backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Blake Tsuzaki",
+  "license": "MIT",
+  "dependencies": {
+    "@google-cloud/nodejs-repo-tools": "^3.1.0",
+    "@google-cloud/pubsub": "^0.24.1",
+    "@google-cloud/text-to-speech": "^0.4.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  }
+}
