@@ -6,10 +6,11 @@ const { PubSub } = require('@google-cloud/pubsub');
 const client = new PubSub();
 
 class PubSubCoordinator {
-    broadcast(topic, data) {
-        const dataBuffer = Buffer.from(data);
+    broadcast(topic, payload) {
+        const stringData = JSON.stringify(payload);
+        const data = Buffer.from(stringData);
 
-        return client.topic(topic).publish(dataBuffer);
+        return client.topic(topic).publish(data);
     }
 }
 

@@ -12,7 +12,11 @@ const PORT = process.env.PORT || 8080;
 
 app.use(bodyParser.json());
 
-const handleError = (error, res) => res.status(500).send(error);
+const handleError = (error, res) => {
+    console.log(JSON.stringify(error));
+    res.status(500).send(error);
+};
+
 const handleSuccess = (res) => res.sendStatus(200);
 
 app.post('/broadcast', (req, res) => {
