@@ -25,13 +25,7 @@ app.post('/broadcast', (req, res) => {
 
     textToSpeech
         .generate(text, voice)
-        .then((textResponse) => {
-            const audioBuffer = textResponse[0].audioContent;
-            const payload = {
-                text: text,
-                audio: audioBuffer
-            };
-
+        .then((payload) => {
             pubSub
                 .broadcast('frontend', payload)
                 .then((pubResponse) => {
